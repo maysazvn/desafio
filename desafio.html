@@ -27,78 +27,36 @@
     let alunos = ["João", "Maria", "Pedro", "Ana", "Carlos"];
     let notas = [];
 
-    let joao = [];
-    let maria = [];
-    let pedro = [];
-    let ana = [];
-    let carlos = [];
+    let resposta = "";
 
 
-    /*function adicionarNotas(aluninhos, notinhas) {
-        for (let i = 0; i <= aluninhos.length; i++) {
+    function adicionarNotas(aluninhos) {
 
-            let numeroNotas = 1;
+        let linhas = [];
 
-            while (notinhas.length <= 4) {
-                let notas = Number(prompt(`João, informe a sua ${numeroNotas}ª nota.`));
+        for (let i = 0; i < aluninhos.length; i++) {
 
-                joao.push(notinhas);
+            let notasAluno = [];
 
-                numeroNotas++
-                notinhas++
+            for (let num = 1; num <= 4; num++) {
+                let nota = Number(prompt(`${aluninhos[i]}, informe sua ${num}ª nota:`));
+                notasAluno.push(nota);
             }
 
-
-            while (notinhas.length <= 4) {
-                let notas = Number(prompt(`Maria, informe a sua ${numeroNotas}ª nota.`));
-
-                maria.push(notinhas);
-
-                numeroNotas++
-                notinhas++
-
-            }
-
-
-            while (notinhas.length <= 4) {
-                let notas = Number(prompt(`Pedro, informe a sua ${numeroNotas}ª nota.`));
-
-                pedro.push(notinhas);
-
-                numeroNotas++
-                notinhas++
-
-            }
-
-
-            while (notinhas.length <= 4) {
-                let notas = Number(prompt(`Ana, informe a sua ${numeroNotas}ª nota.`));
-
-                ana.push(notinhas);
-
-                numeroNotas++
-                notinhas++
-
-            }
-
-
-            while (notinhas.length <= 4) {
-                let notas = Number(prompt(`Carlos, informe a sua ${numeroNotas}ª nota.`));
-
-                carlos.push(notinhas);
-
-                numeroNotas++
-                notinhas++
-
-            }
-
+            linhas.push(`${aluninhos[i]}: ${notasAluno.join(", ")}`);
         }
-    }*/
+
+         resposta = linhas.join("\n");
+
+        return resposta;
+    }
+
 
     //exibicao
     let opcao = 1;
 
     while (opcao > 0) {
+
         opcao = parseInt(prompt(
             "GESTOR DE NOTAS E MÉDIAS\n\n" +
             "1. Adicionar Notas\n" +
@@ -107,13 +65,16 @@
             "0. Sair\n\n" +
             "Escolha uma opção:"
         ));
+
+        if (opcao === 1) {
+
+            adicionarNotas(alunos);
+
+            alert(resposta);
+
+        }
     }
-    
 
 
-
-    adicionarNotas(alunos, notas);
-
-    alert(`joao ${joao}, maria ${maria}, pedro ${pedro}, ana ${ana}, carlos ${carlos}.`);
 
 </script>
