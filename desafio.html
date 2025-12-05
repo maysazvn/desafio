@@ -107,25 +107,6 @@
             "0. Sair\n\n" +
             "Escolha uma opção:"
         ));
-        switch (opcao) {
-            case 1:
-                let nomeLivro = prompt("Digite o nome do livro:");
-                let categoriaLivro = prompt("Digite a categoria do livro:");
-                alert(adicionarLivroFunc(nomeLivro, categoriaLivro));
-                break;
-            case 2:
-                let nomeLivroRemover = prompt("Digite o nome do livro a ser removido:");
-                alert(removerLivroFunc(nomeLivroRemover));
-                break;
-            case 3:
-                alert(listarLivros());
-                break;
-            case 0:
-                alert("Saindo...");
-                break;
-            default:
-                alert("Opção inválida!");
-        }
     }
     
 
