@@ -44,11 +44,29 @@
             }
 
             linhas.push(`${aluninhos[i]}: ${notasAluno.join(", ")}`);
+
+            notas.push(notasAluno);
         }
 
-         resposta = linhas.join("\n");
+
+        resposta = linhas.join("\n");
 
         return resposta;
+    }
+
+    let media = "";
+
+    function calcularMedia(notasAluno) {
+        
+        let soma = 0;
+
+        for (let i = 0; i < notasAluno.length; i++) {
+            soma += notasAluno[i];
+        }
+
+        media = soma / notasAluno.length;
+
+        return media;
     }
 
 
@@ -72,9 +90,18 @@
 
             alert(resposta);
 
+        } else if (opcao === 2) {
+
+            let resultadoMedia = "";
+
+            for (let i = 0; i < alunos.length; i++) {
+                let m = calcularMedia(notas[i]);
+                resultadoMedia += `${alunos[i]} - Média: ${m.toFixed(2)}\n`;
+            }
+
+            alert(resultadoMedia);
         }
+
     }
-
-
 
 </script>
